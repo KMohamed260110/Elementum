@@ -1,0 +1,258 @@
+/* ============================================================
+   ELEMENTUM 3D — Design Tokens & Themes
+   Design system: Immersive/Interactive · Bento · Dark-first
+   Typography: Exo (display) / Roboto Mono (data)
+   ============================================================ */
+
+:root {
+  /* ---------- Type ---------- */
+  --font-display: "Exo", system-ui, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, monospace;
+
+  /* ---------- Spacing scale (standard density) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* ---------- Radii ---------- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* ---------- Motion ---------- */
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 160ms;
+  --dur-mid: 320ms;
+  --dur-slow: 600ms;
+
+  /* ---------- Z layers ---------- */
+  --z-bg: 0;
+  --z-scene: 10;
+  --z-ui: 100;
+  --z-menu: 200;
+  --z-modal: 1000;
+}
+
+/* ============================================================
+   THEME: NEBULA (default — deep space)
+   ============================================================ */
+body.theme-nebula {
+  --bg-0: #05060f;
+  --bg-1: #0a0d1f;
+  --bg-2: #11152e;
+  --surface: rgba(20, 26, 56, 0.55);
+  --surface-solid: #141a38;
+  --surface-hi: rgba(40, 48, 92, 0.75);
+  --border: rgba(120, 140, 220, 0.18);
+  --border-hi: rgba(160, 180, 255, 0.4);
+  --text: #e8ecff;
+  --text-muted: #98a0c8;
+  --text-dim: #5a608a;
+  --accent: #00e5ff;
+  --accent-2: #b46bff;
+  --accent-3: #ff5e9c;
+  --glow: 0 0 32px rgba(0, 229, 255, 0.25);
+
+  /* category colors (used by 3D + UI) */
+  --cat-alkali-metal: #ff6b6b;
+  --cat-alkaline-earth: #ffa94d;
+  --cat-transition-metal: #ffd43b;
+  --cat-post-transition: #69db7c;
+  --cat-metalloid: #38d9a9;
+  --cat-nonmetal: #4dabf7;
+  --cat-halogen: #5c7cfa;
+  --cat-noble-gas: #cc5de8;
+  --cat-lanthanide: #f783ac;
+  --cat-actinide: #e599f7;
+  --cat-unknown: #868e96;
+}
+
+/* ============================================================
+   THEME: AURORA (dark teal/green)
+   ============================================================ */
+body.theme-aurora {
+  --bg-0: #02100c;
+  --bg-1: #04150f;
+  --bg-2: #061d15;
+  --surface: rgba(8, 40, 30, 0.55);
+  --surface-solid: #0c2a1f;
+  --surface-hi: rgba(16, 64, 48, 0.75);
+  --border: rgba(80, 200, 160, 0.2);
+  --border-hi: rgba(120, 240, 200, 0.45);
+  --text: #e6fff5;
+  --text-muted: #8fc8b0;
+  --text-dim: #4a7565;
+  --accent: #2af5b0;
+  --accent-2: #00b8d9;
+  --accent-3: #c6ff5e;
+  --glow: 0 0 32px rgba(42, 245, 176, 0.25);
+
+  --cat-alkali-metal: #ff7676;
+  --cat-alkaline-earth: #ffa84d;
+  --cat-transition-metal: #ffe066;
+  --cat-post-transition: #69db7c;
+  --cat-metalloid: #38d9a9;
+  --cat-nonmetal: #4dd0e1;
+  --cat-halogen: #4dabf7;
+  --cat-noble-gas: #b197fc;
+  --cat-lanthanide: #f783ac;
+  --cat-actinide: #e599f7;
+  --cat-unknown: #868e96;
+}
+
+/* ============================================================
+   THEME: SUNSET (warm orange/red)
+   ============================================================ */
+body.theme-sunset {
+  --bg-0: #1a0a05;
+  --bg-1: #1f0a08;
+  --bg-2: #2a0e0a;
+  --surface: rgba(56, 20, 12, 0.55);
+  --surface-solid: #2e120c;
+  --surface-hi: rgba(92, 36, 20, 0.75);
+  --border: rgba(220, 120, 80, 0.2);
+  --border-hi: rgba(255, 160, 120, 0.45);
+  --text: #fff1e6;
+  --text-muted: #d8a890;
+  --text-dim: #8a5a48;
+  --accent: #ff7a45;
+  --accent-2: #ffc043;
+  --accent-3: #ff4d8d;
+  --glow: 0 0 32px rgba(255, 122, 69, 0.25);
+
+  --cat-alkali-metal: #ff5252;
+  --cat-alkaline-earth: #ff7043;
+  --cat-transition-metal: #ffab40;
+  --cat-post-transition: #ffd54f;
+  --cat-metalloid: #d4e157;
+  --cat-nonmetal: #4dd0e1;
+  --cat-halogen: #7986cb;
+  --cat-noble-gas: #ba68c8;
+  --cat-lanthanide: #f06292;
+  --cat-actinide: #e57373;
+  --cat-unknown: #9e8478;
+}
+
+/* ============================================================
+   THEME: MONO (light minimal)
+   ============================================================ */
+body.theme-mono {
+  --bg-0: #f4f5f8;
+  --bg-1: #ebedf2;
+  --bg-2: #e2e5ec;
+  --surface: rgba(255, 255, 255, 0.7);
+  --surface-solid: #ffffff;
+  --surface-hi: rgba(255, 255, 255, 0.95);
+  --border: rgba(40, 50, 80, 0.12);
+  --border-hi: rgba(40, 50, 80, 0.3);
+  --text: #1a1f2e;
+  --text-muted: #5a6178;
+  --text-dim: #9aa0b5;
+  --accent: #2563eb;
+  --accent-2: #7c3aed;
+  --accent-3: #db2777;
+  --glow: 0 0 32px rgba(37, 99, 235, 0.18);
+
+  --cat-alkali-metal: #ef4444;
+  --cat-alkaline-earth: #f97316;
+  --cat-transition-metal: #eab308;
+  --cat-post-transition: #84cc16;
+  --cat-metalloid: #22c55e;
+  --cat-nonmetal: #06b6d4;
+  --cat-halogen: #3b82f6;
+  --cat-noble-gas: #8b5cf6;
+  --cat-lanthanide: #ec4899;
+  --cat-actinide: #d946ef;
+  --cat-unknown: #6b7280;
+}
+
+/* ============================================================
+   THEME: FOREST (deep green)
+   ============================================================ */
+body.theme-forest {
+  --bg-0: #060f08;
+  --bg-1: #08160d;
+  --bg-2: #0a1f12;
+  --surface: rgba(12, 36, 22, 0.55);
+  --surface-solid: #0e2417;
+  --surface-hi: rgba(20, 56, 36, 0.75);
+  --border: rgba(80, 180, 100, 0.18);
+  --border-hi: rgba(120, 220, 140, 0.4);
+  --text: #e8f5e9;
+  --text-muted: #98c0a0;
+  --text-dim: #506858;
+  --accent: #66bb6a;
+  --accent-2: #26a69a;
+  --accent-3: #d4e157;
+  --glow: 0 0 32px rgba(102, 187, 106, 0.25);
+
+  --cat-alkali-metal: #ff8a65;
+  --cat-alkaline-earth: #ffb74d;
+  --cat-transition-metal: #ffd54f;
+  --cat-post-transition: #aed581;
+  --cat-metalloid: #4db6ac;
+  --cat-nonmetal: #4fc3f7;
+  --cat-halogen: #7986cb;
+  --cat-noble-gas: #ba68c8;
+  --cat-lanthanide: #f06292;
+  --cat-actinide: #e57373;
+  --cat-unknown: #90a4ae;
+}
+
+/* ============================================================
+   THEME: INFERNO (volcanic red/black)
+   ============================================================ */
+body.theme-inferno {
+  --bg-0: #0a0303;
+  --bg-1: #140404;
+  --bg-2: #1e0606;
+  --surface: rgba(40, 8, 8, 0.6);
+  --surface-solid: #2a0a0a;
+  --surface-hi: rgba(72, 16, 16, 0.78);
+  --border: rgba(255, 80, 60, 0.2);
+  --border-hi: rgba(255, 120, 100, 0.45);
+  --text: #fff0eb;
+  --text-muted: #d09890;
+  --text-dim: #7a4038;
+  --accent: #ff3b30;
+  --accent-2: #ff9500;
+  --accent-3: #ff2d92;
+  --glow: 0 0 32px rgba(255, 59, 48, 0.3);
+
+  --cat-alkali-metal: #ff4444;
+  --cat-alkaline-earth: #ff7a33;
+  --cat-transition-metal: #ffae33;
+  --cat-post-transition: #ffd633;
+  --cat-metalloid: #ccff66;
+  --cat-nonmetal: #5cf0ff;
+  --cat-halogen: #66aaff;
+  --cat-noble-gas: #cc66ff;
+  --cat-lanthanide: #ff66aa;
+  --cat-actinide: #ff99cc;
+  --cat-unknown: #996666;
+}
+
+/* Custom-color override capability (set via JS on documentElement) */
+:root {
+  --cat-alkali-metal-override: initial;
+  --cat-alkaline-earth-override: initial;
+  --cat-transition-metal-override: initial;
+  --cat-post-transition-override: initial;
+  --cat-metalloid-override: initial;
+  --cat-nonmetal-override: initial;
+  --cat-halogen-override: initial;
+  --cat-noble-gas-override: initial;
+  --cat-lanthanide-override: initial;
+  --cat-actinide-override: initial;
+  --cat-unknown-override: initial;
+}
+
+/* Helper: get the active category color, honoring custom overrides */

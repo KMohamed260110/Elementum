@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="description" content="Elementum 3D — An immersive, three-dimensional interactive periodic table. Orbit, zoom, and explore every element." />
+  <title>Elementum 3D · Interactive Periodic Table</title>
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='sans-serif' font-weight='bold'%3E%E2%9A%9B%3C/text%3E%3C/svg%3E" />
+</head>
+<body class="theme-nebula">
+
+  <!-- Loading screen -->
+  <div class="loader" id="loader">
+    <div class="loader-symbol">⚛</div>
+    <div class="loader-bar"></div>
+    <div class="loader-text">Initializing Universe</div>
+  </div>
+
+  <!-- 3D Canvas -->
+  <canvas id="scene-canvas"></canvas>
+
+  <!-- Header -->
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-title">ELEMENTUM</div>
+    </div>
+
+    <div class="header-controls">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/>
+        </svg>
+        <input id="search" type="search" class="search-input" placeholder="Search name, symbol, #" aria-label="Search elements" />
+      </div>
+
+      <button id="btn-toggle-menu" class="icon-btn" title="Toggle panel" aria-label="Toggle panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/>
+          <rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/>
+        </svg>
+        <span class="text">PANEL</span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Element count -->
+  <div class="element-count" id="element-count">
+    <strong>118</strong> elements · <span id="visible-count">118</span> visible
+  </div>
+
+  <!-- Floating 3D menu (left) -->
+  <aside class="floating-menu" id="floating-menu" aria-label="Controls panel">
+    <div class="menu-section">
+      <div class="menu-label">Filter Categories</div>
+      <div class="category-list" id="category-list"></div>
+    </div>
+
+  </aside>
+
+  <!-- Status / hint bar -->
+  <div class="status-bar" id="status-bar">
+    <span><kbd>Drag</kbd> orbit</span>
+    <span><kbd>Scroll</kbd> zoom</span>
+    <span><kbd>Click</kbd> element</span>
+    <span><kbd>Esc</kbd> close</span>
+  </div>
+
+  <!-- Element detail panel -->
+  <div class="detail-panel" id="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detail-name">
+    <div class="detail-backdrop" id="detail-backdrop"></div>
+    <article class="detail-card" id="detail-card">
+      <button class="detail-close" id="detail-close" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="detail-header">
+        <div class="detail-symbol" id="detail-symbol">H</div>
+        <div class="detail-title-block">
+          <div class="detail-num" id="detail-num">ATOMIC NUMBER 1</div>
+          <div class="detail-name" id="detail-name">Hydrogen</div>
+          <span class="detail-cat-badge" id="detail-cat">Nonmetal</span>
+        </div>
+      </div>
+      <div class="detail-fact" id="detail-fact"></div>
+      <div class="detail-grid" id="detail-grid"></div>
+    </article>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Three.js import map -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <!-- App modules (type=module, deferred) -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
